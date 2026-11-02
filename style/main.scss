@@ -25,7 +25,7 @@ html, body {
   margin: 0;
   padding: 0;
 
-  background: #faf8ef;
+  background: #f1f6e4;
   color: $text-color;
   font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif;
   font-size: 18px;
@@ -544,6 +544,38 @@ hr {
 
     .lower {
       margin-top: 30px !important;
+    }
+  }
+}
+
+// Animal theme
+.tile .tile-inner {
+  position: relative;
+
+  .tile-animal {
+    font-size: 48px;
+  }
+
+  .tile-number {
+    position: absolute;
+    right: 6px;
+    bottom: 4px;
+    font-size: 14px;
+    line-height: 14px;
+  }
+}
+
+@include smaller($mobile-threshold) {
+  .tile .tile-inner {
+    .tile-animal {
+      font-size: 30px;
+    }
+
+    .tile-number {
+      right: 4px;
+      bottom: 2px;
+      font-size: 10px;
+      line-height: 10px;
     }
   }
 }
