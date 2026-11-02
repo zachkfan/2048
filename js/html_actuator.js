@@ -62,7 +62,15 @@ HTMLActuator.prototype.addTile = function (tile) {
   this.applyClasses(wrapper, classes);
 
   inner.classList.add("tile-inner");
-  inner.textContent = tile.value;
+
+  var animal = document.createElement("span");
+  var number = document.createElement("span");
+  animal.classList.add("tile-animal");
+  number.classList.add("tile-number");
+  animal.textContent = this.animalFor(tile.value);
+  number.textContent = tile.value;
+  inner.appendChild(animal);
+  inner.appendChild(number);
 
   if (tile.previousPosition) {
     // Make sure that the tile gets rendered in the previous position first
@@ -96,6 +104,15 @@ HTMLActuator.prototype.applyClasses = function (element, classes) {
 
 HTMLActuator.prototype.normalizePosition = function (position) {
   return { x: position.x + 1, y: position.y + 1 };
+};
+
+HTMLActuator.prototype.animals = {
+  2: "🐭", 4: "🐰", 8: "🐱", 16: "🐶", 32: "🦊", 64: "🐼",
+  128: "🐨", 256: "🐯", 512: "🦁", 1024: "🐻", 2048: "🐘"
+};
+
+HTMLActuator.prototype.animalFor = function (value) {
+  return this.animals[value] || "🐳";
 };
 
 HTMLActuator.prototype.positionClass = function (position) {

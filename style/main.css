@@ -2,7 +2,7 @@
 html, body {
   margin: 0;
   padding: 0;
-  background: #faf8ef;
+  background: #f1f6e4;
   color: #776e65;
   font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif;
   font-size: 18px; }
@@ -756,3 +756,23 @@ hr {
     margin-top: 90px !important; }
   .game-message .lower {
     margin-top: 30px !important; } }
+
+.tile .tile-inner {
+  position: relative; }
+  .tile .tile-inner .tile-animal {
+    font-size: 48px; }
+  .tile .tile-inner .tile-number {
+    position: absolute;
+    right: 6px;
+    bottom: 4px;
+    font-size: 14px;
+    line-height: 14px; }
+
+@media screen and (max-width: 520px) {
+  .tile .tile-inner .tile-animal {
+    font-size: 30px; }
+  .tile .tile-inner .tile-number {
+    right: 4px;
+    bottom: 2px;
+    font-size: 10px;
+    line-height: 10px; } }
